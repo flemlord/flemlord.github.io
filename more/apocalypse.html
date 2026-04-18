@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>THE END</title>
+<script>
+var colors = ['#000000','#ff0000','#ffffff','#ffff00','#ff00ff','#00ff00','#0000ff'];
+var idx = 0;
+setInterval(function() {
+  document.body.style.backgroundColor = colors[idx++ % colors.length];
+  document.body.style.color = colors[(idx+3) % colors.length];
+}, 120);
+
+document.addEventListener('DOMContentLoaded', function(){
+  var shake = 0;
+  setInterval(function(){
+    shake = (shake + 1) % 4;
+    var dx = [0,3,-3,2][shake];
+    var dy = [0,-2,2,-3][shake];
+    document.body.style.transform = 'translate('+dx+'px,'+dy+'px)';
+  }, 60);
+
+  setInterval(function(){
+    var w = document.createElement('div');
+    w.textContent = ['AAAAAAAA','{{TARGET}}','!!!!','NO','WHY','HELP','RUN','END','FLEE','SEETHE'][Math.floor(Math.random()*10)];
+    w.style.cssText = 'position:fixed;left:'+Math.random()*90+'vw;top:'+Math.random()*90+'vh;font-size:'+(20+Math.random()*60)+'px;color:'+colors[Math.floor(Math.random()*colors.length)]+';font-family:Impact;pointer-events:none;z-index:99999;font-weight:bold';
+    document.body.appendChild(w);
+    setTimeout(function(){ w.remove(); }, 1200);
+  }, 150);
+});
+</script>
+</head>
+<body bgcolor="#000000" text="#ff0000">
+
+<marquee behavior="alternate" scrollamount="40"><font size="7" face="Impact"><b>!!!! THE END !!!!</b></font></marquee>
+<marquee direction="right" scrollamount="30"><font size="7" face="Impact" color="#ffff00">!!!! THE END !!!!</font></marquee>
+<marquee direction="left" scrollamount="35"><font size="7" face="Impact" color="#ff00ff">!!!! THE END !!!!</font></marquee>
+<marquee direction="up" height="80" scrollamount="10"><font size="7" face="Impact" color="#00ff00">!!!! THE END !!!!</font></marquee>
+
+<center>
+
+<br>
+<font size="7" face="Impact"><blink>T H E &nbsp; W O R L D &nbsp; I S &nbsp; E N D I N G</blink></font>
+<br><br>
+
+<table border="10" cellpadding="30" bgcolor="#220000"><tr><td align="center">
+<font size="6" color="#ffff00" face="Impact">
+I TOLD YOU.<br>
+I TOLD EVERYONE.<br>
+I MADE A WEBSITE ABOUT IT.<br>
+NOBODY LISTENED.<br>
+AND NOW:<br><br>
+<font size="8" color="#ff00ff" face="Impact"><blink>{{TARGET}}</blink></font>
+</font>
+</td></tr></table>
+
+<br><br>
+
+<marquee direction="left" scrollamount="60"><font size="7">&#128293; &#128293; &#128293; &#128293; &#128293; &#128293; &#128293; &#128293; &#128293; &#128293; &#128293; &#128293; &#128293; &#128293; &#128293; &#128293; &#128293; &#128293; &#128293; &#128293;</font></marquee>
+<marquee direction="right" scrollamount="60"><font size="7">&#9760; &#9760; &#9760; &#9760; &#9760; &#9760; &#9760; &#9760; &#9760; &#9760; &#9760; &#9760; &#9760; &#9760; &#9760; &#9760; &#9760; &#9760; &#9760; &#9760;</font></marquee>
+<marquee direction="left" scrollamount="60"><font size="7">&#9889; &#9889; &#9889; &#9889; &#9889; &#9889; &#9889; &#9889; &#9889; &#9889; &#9889; &#9889; &#9889; &#9889; &#9889; &#9889; &#9889; &#9889; &#9889; &#9889;</font></marquee>
+
+<br>
+<font size="5" face="Impact">at least i got to finish the website. &mdash; flemlord, final log entry</font>
+<br><br>
+
+<a href="index.html" style="color:#ffffff;font-size:22px;font-family:Impact"><blink>&lt;&lt; CRAWL BACK &gt;&gt;</blink></a>
+
+</center>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>flemlord 2: electric boogaloo</title>
+<script>
+window.addEventListener('load', function() {
+  alert("HI. WELCOME. KEEP YOUR HANDS WHERE I CAN SEE THEM.");
+  setTimeout(function() {
+    alert("you are visitor #141. probably. nobody's counting.");
+  }, 500);
+  setTimeout(function() {
+    var ok = confirm("do you promise not to show this site to {{TARGET}}?");
+    if (!ok) alert("wrong answer. try again.");
+    else alert("thank you. you may proceed.");
+  }, 900);
+
+  // blinking title
+  var titles = ['FLEMLORD.NET','!! WELCOME !!','i see you','keep scrolling'];
+  var t = 0;
+  setInterval(function(){ document.title = titles[t++ % titles.length]; }, 800);
+
+  // status-bar style scrolling message at the bottom
+  var msg = '   >>> no CSS. no mercy. no {{TARGET}}. <<<   ';
+  var pos = 0;
+  var bar = document.getElementById('scrollbar');
+  setInterval(function(){
+    pos = (pos + 1) % msg.length;
+    if (bar) bar.innerHTML = (msg + msg).substring(pos, pos + 60);
+  }, 120);
+});
+
+// cursor trail of unicode stars
+document.addEventListener('mousemove', function(e) {
+  var s = document.createElement('span');
+  s.textContent = '★';
+  s.style.cssText = 'position:fixed;left:'+e.clientX+'px;top:'+e.clientY+'px;color:#ff00ff;font-size:16px;pointer-events:none;z-index:9999';
+  document.body.appendChild(s);
+  setTimeout(function(){ s.remove(); }, 600);
+});
+
+// subtle body shake
+window.addEventListener('load', function() {
+  var i = 0;
+  setInterval(function() {
+    i = (i + 1) % 4;
+    var dx = [0,1,-1,0][i];
+    var dy = [0,-1,1,0][i];
+    document.body.style.transform = 'translate('+dx+'px,'+dy+'px)';
+  }, 120);
+});
+
+// KONAMI CODE unlocks hidden page
+var konami = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+var konIdx = 0;
+document.addEventListener('keydown', function(e) {
+  var k = e.key;
+  if (k === konami[konIdx] || k.toLowerCase() === konami[konIdx]) {
+    konIdx++;
+    if (konIdx === konami.length) {
+      konIdx = 0;
+      window.location.href = 'konami.html';
+    }
+  } else {
+    konIdx = 0;
+  }
+});
+
+// onbeforeunload: be dramatic
+window.addEventListener('beforeunload', function(e) {
+  e.preventDefault();
+  e.returnValue = 'are you sure? {{TARGET}} wins if you leave.';
+  return e.returnValue;
+});
+</script>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+
+<table width="100%" border="1" cellpadding="4" bgcolor="#ffff00"><tr><td align="center">
+<blink><b>!! SITE UNDER ETERNAL CONSTRUCTION !!</b></blink> &mdash; last updated whenever i feel like it
+</td></tr></table>
+
+<table width="100%" border="1" cellpadding="2" bgcolor="#c0c0c0"><tr><td align="center">
+<font size="1">[ AD ]</font> &nbsp; <b>THIS AD SPACE AVAILABLE</b> &nbsp; <font size="1">inquire via</font> <a href="faq.html">FAQ</a> <font size="1">(but don't)</font>
+</td></tr></table>
+
+<h1>HEY. YEAH YOU.</h1>
+
+<p>listen up you absolute <b>clown</b>. you came here. you clicked the link. that's on you.</p>
+
+<p>i hope {{TARGET}} chokes on a dry crouton. i hope their wifi drops every 6 minutes. i hope their phone dies at 4% when they're waiting for an uber.</p>
+
+<img src="img/eye.jpg" width="400"><br>
+
+<p>you know what? fuck it. here's the truth: {{TARGET}} has the personality of a damp receipt. {{TARGET}} orders a plain bagel with nothing on it. {{TARGET}} says "literally" when they mean "figuratively." {{TARGET}} is the reason the line is moving slow.</p>
+
+<p><a href="rant2.html">click here if you hate them as much as i do</a></p>
+
+<p><a href="rant3.html">or click here if you're bored</a></p>
+
+<br>
+
+<hr>
+
+<p align="center">
+[ <a href="rant2.html">crimes</a> ]
+[ <a href="rant3.html">3am</a> ]
+[ <a href="manifesto.html">manifesto</a> ]
+[ <a href="enemies.html">enemies</a> ]
+[ <a href="lore.html">lore</a> ]
+[ <a href="faq.html">faq</a> ]
+[ <a href="guestbook.html">guestbook</a> ]
+[ <a href="about.html">about</a> ]
+[ <a href="news.html">news</a> ]
+[ <a href="links.html">links</a> ]
+<br>
+[ <a href="gallery.html">gallery</a> ]
+[ <a href="shrine.html">shrine</a> ]
+[ <a href="conspiracy.html">conspiracy</a> ]
+[ <a href="dreams.html">dreams</a> ]
+[ <a href="quiz.html">quiz</a> ]
+[ <a href="merch.html">merch</a> ]
+<br>
+[ <a href="press.html">press</a> ]
+[ <a href="forum.html">forum</a> ]
+[ <a href="glossary.html">glossary</a> ]
+[ <a href="terms.html">terms</a> ]
+[ <a href="archive.html">archive</a> ]
+[ <a href="captcha.html">captcha</a> ]
+[ <a href="frames.html">frames</a> ]
+<br>
+[ <a href="bible.html">bible</a> ]
+[ <a href="psalms.html">psalms</a> ]
+[ <a href="haiku.html">haiku</a> ]
+[ <a href="curse.html">curse</a> ]
+[ <a href="ritual.html">ritual</a> ]
+[ <a href="prophecy.html">prophecy</a> ]
+[ <a href="god.html">god</a> ]
+[ <a href="inferno.html">inferno</a> ]
+[ <a href="funeral.html">funeral</a> ]
+[ <a href="voices.html">voices</a> ]
+<br>
+[ <a href="chaos.html"><blink>CHAOS</blink></a> ]
+[ <a href="apocalypse.html"><blink>APOCALYPSE</blink></a> ]
+[ <a href="countdown.html">countdown</a> ]
+[ <a href="win98.html">win98</a> ]
+[ <a href="chatroom.html">chatroom</a> ]
+[ <a href="enter.html">enter splash</a> ]
+[ <a href="runaway.html">forgive?</a> ]
+[ <a href="finalwords.html">final words</a> ]
+[ <a href="sitemap.html">sitemap</a> ]
+</p>
+
+<p align="center"><font size="1" color="#888888"><i>(try the konami code &uarr;&uarr;&darr;&darr;&larr;&rarr;&larr;&rarr;BA)</i></font></p>
+
+<p align="center"><font size="1">you are visitor <b>#00000141</b>. counter last worked in 2005. this is an estimate.</font></p>
+
+<p align="center"><small>this site is a cry for help</small></p>
+
+<hr>
+<table width="100%" bgcolor="#000000"><tr><td>
+<font color="#00ff00" face="courier" size="2">&gt; <span id="scrollbar">initializing status bar...</span></font>
+</td></tr></table>
+
+</body>
+</html>

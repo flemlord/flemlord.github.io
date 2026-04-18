@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>T-minus</title>
+<script>
+var t = 60;
+var interval;
+function tick() {
+  var el = document.getElementById('clock');
+  var body = document.body;
+  if (!el) return;
+  if (t <= 0) {
+    el.innerHTML = '&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;';
+    body.style.backgroundColor = ['#ff0000','#000000','#ffffff'][Math.floor(Math.random()*3)];
+    document.getElementById('msg').innerHTML = "<font size='6' color='#ffffff' face='Impact'>it's over. pack it up. see <a href='apocalypse.html' style='color:#ffff00'>apocalypse</a>.</font>";
+    document.getElementById('msg2').style.display = 'block';
+    return;
+  }
+  el.innerHTML = '&nbsp;&nbsp;&nbsp;' + t + '&nbsp;&nbsp;&nbsp;';
+  if (t <= 10) {
+    body.style.backgroundColor = (t % 2) ? '#ff0000' : '#000000';
+  }
+  t--;
+}
+window.addEventListener('load', function(){
+  interval = setInterval(tick, 1000);
+  tick();
+});
+</script>
+</head>
+<body bgcolor="#000000" text="#ffffff">
+
+<center>
+
+<br>
+<font size="6" face="Impact">TIME REMAINING UNTIL {{TARGET}}'s REIGN ENDS:</font>
+
+<br><br>
+
+<table border="6" cellpadding="40" bgcolor="#220000"><tr><td align="center">
+<font size="7" face="courier" color="#ff0000" id="clock">&nbsp;&nbsp;&nbsp;60&nbsp;&nbsp;&nbsp;</font>
+</td></tr></table>
+
+<br><br>
+
+<font size="3" color="#aaaaaa"><i>(the countdown is arbitrary. it will not, in fact, end {{TARGET}}'s reign. but watching it feels good.)</i></font>
+
+<br><br>
+
+<div id="msg"></div>
+
+<br>
+
+<div id="msg2" style="display:none">
+<font size="5" color="#ff00ff" face="Impact"><blink>click for aftermath &raquo;&raquo;&raquo;</blink></font><br>
+<a href="apocalypse.html" style="color:#ff00ff;font-size:26px"><b>APOCALYPSE</b></a>
+</div>
+
+<br><br>
+
+<a href="index.html" style="color:#ffffff">home</a>
+
+</center>
+
+</body>
+</html>

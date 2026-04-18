@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>prove you are not {{TARGET}}</title>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+
+<center>
+
+<h1>SECURITY CHECK</h1>
+
+<p>before entering the site, please verify you are not {{TARGET}}.</p>
+
+<hr>
+
+<table border="2" cellpadding="20" bgcolor="#f0f0f0"><tr><td>
+
+<p><b>Q: are you {{TARGET}}?</b></p>
+<p>
+<input type="radio" name="q" disabled> yes<br>
+<input type="radio" name="q" checked disabled> no
+</p>
+
+<p><b>Q: select all images that contain {{TARGET}}:</b></p>
+<table border="1"><tr>
+<td><img src="img/face1.jpg" width="80"><br><input type="checkbox" disabled> 1</td>
+<td><img src="img/face2.jpg" width="80"><br><input type="checkbox" disabled> 2</td>
+<td><img src="img/face3.jpg" width="80"><br><input type="checkbox" disabled> 3</td>
+</tr><tr>
+<td><img src="img/face4.png" width="80"><br><input type="checkbox" disabled> 4</td>
+<td><img src="img/face5.jpg" width="80"><br><input type="checkbox" disabled> 5</td>
+<td><img src="img/face6.jpg" width="80"><br><input type="checkbox" disabled> 6</td>
+</tr></table>
+<p><font size="1">(trick: all of them. {{TARGET}} is in every image. that's how this works.)</font></p>
+
+<p><b>Q: type the phrase below to continue:</b></p>
+<p><font size="4" face="courier"><b>i solemnly swear i am not {{TARGET}}</b></font></p>
+<input type="text" disabled size="50" value="(typing disabled)"><br><br>
+
+<input type="submit" disabled value="VERIFY (nothing happens)">
+
+</td></tr></table>
+
+<hr>
+
+<p><font size="1">this captcha is powered by nothing. it does not check anything. your answers are not stored. proceed at your own peril.</font></p>
+
+<p><a href="index.html">skip it, enter the site</a></p>
+
+</center>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>click the button</title>
+<script>
+function flee(btn, e) {
+  var maxX = window.innerWidth - btn.offsetWidth - 20;
+  var maxY = window.innerHeight - btn.offsetHeight - 20;
+  var nx = Math.random() * maxX;
+  var ny = Math.random() * maxY;
+  btn.style.position = 'fixed';
+  btn.style.left = nx + 'px';
+  btn.style.top = ny + 'px';
+  var colors = ['#ff0000','#ffff00','#00ff00','#00ffff','#ff00ff'];
+  btn.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
+  var msg = document.getElementById('msg');
+  var tries = parseInt(msg.getAttribute('data-tries') || '0') + 1;
+  msg.setAttribute('data-tries', tries);
+  msg.innerHTML = 'attempts: <b>' + tries + '</b>. still pending.';
+}
+</script>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+
+<center>
+
+<h1>CLICK THE BUTTON TO FORGIVE {{TARGET}}</h1>
+
+<p>it's easy. just click it.</p>
+
+<br>
+
+<button onmouseover="flee(this, event)" onclick="alert('ha ha — you actually got it. ok fine. forgiveness granted. (void where prohibited.)')" style="font-size:24px;padding:20px 40px;background:#00ff00;border:4px solid #000;cursor:pointer"><b>I FORGIVE {{TARGET}}</b></button>
+
+<br><br><br>
+
+<p id="msg" data-tries="0"><i>attempts: 0.</i></p>
+
+<br>
+
+<p><font size="2"><i>(the button will flee on hover. if you can catch it with a touchscreen tap, you win. no prize.)</i></font></p>
+
+<br><br>
+
+<a href="index.html">home</a>
+
+</center>
+
+</body>
+</html>

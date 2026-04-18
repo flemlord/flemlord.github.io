@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>.....</title>
+<script>
+var phrases = [
+  "can you hear us",
+  "they're here",
+  "{{TARGET}}",
+  "don't look behind you",
+  "too late",
+  "the bagel was plain",
+  "it was always plain",
+  "we told you",
+  "nobody listened",
+  "flemlord",
+  "ﬂ︎ℯ︎м︎ℓ︎𝚘︎𝚛︎𝖽︎",
+  "................",
+  "are you still here",
+  "we are still here"
+];
+
+window.addEventListener('load', function() {
+  setInterval(function() {
+    var el = document.createElement('div');
+    el.textContent = phrases[Math.floor(Math.random() * phrases.length)];
+    el.style.cssText = 'position:fixed;'+
+      'left:'+(Math.random()*80+5)+'vw;'+
+      'top:'+(Math.random()*80+5)+'vh;'+
+      'color:#aa0000;'+
+      'font-family:serif;'+
+      'font-size:'+(12+Math.random()*32)+'px;'+
+      'font-style:italic;'+
+      'opacity:'+(0.4+Math.random()*0.5)+';'+
+      'pointer-events:none;'+
+      'z-index:9999';
+    document.body.appendChild(el);
+    setTimeout(function(){ el.remove(); }, 2500);
+  }, 300);
+});
+</script>
+</head>
+<body bgcolor="#111111" text="#555555">
+
+<center>
+
+<br><br>
+<font size="7" face="serif" color="#666666"><i>the voices</i></font>
+
+<br><br>
+
+<font size="2" color="#666666"><i>this is not a page. this is a transcription.</i></font>
+
+<br><br><br>
+
+<table border="0" cellpadding="30"><tr><td align="left">
+<font face="serif" size="3" color="#888888">
+<p>they come at night, mostly.<br>
+sometimes around 4pm, if i'm tired.<br>
+they have things to say.<br>
+not all of it is useful.<br>
+some of it is about {{TARGET}}.</p>
+
+<p>i write it down. i don't interpret.<br>
+that is someone else's job.<br>
+maybe yours.<br>
+maybe nobody's.</p>
+
+<p><i>"the bagel was plain,"</i> they say.<br>
+yes, i tell them. we know.<br>
+they say it again anyway.</p>
+</font>
+</td></tr></table>
+
+<br><br>
+
+<a href="index.html" style="color:#666666;font-size:10px">(return)</a>
+
+</center>
+
+</body>
+</html>

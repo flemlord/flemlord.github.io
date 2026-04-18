@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>system error</title>
+<script>
+window.addEventListener('load', function() {
+  alert("Windows — System Error\n\n{{TARGET}}.EXE has caused an illegal operation and will be shut down.\n\n  [ OK ]");
+  setTimeout(function() {
+    alert("Microsoft Internet Explorer\n\nthe page you are viewing contains {{TARGET}}. do you want to continue?\n\n  [ Yes ]   [ No ]   [ Yes (reluctantly) ]");
+  }, 400);
+  setTimeout(function() {
+    alert("WinAmp — Error\n\ncannot find midi_placeholder.mid\ndid you mean: screaming.wav?\n\n  [ OK ]");
+  }, 800);
+  setTimeout(function() {
+    alert("Recycle Bin\n\nare you sure you want to delete {{TARGET}}?\n\n(jk you can't. i tried.)");
+  }, 1200);
+});
+</script>
+</head>
+<body bgcolor="#008080" text="#ffffff">
+
+<h1>system error simulator</h1>
+<p>this page exists to recreate the 1998 experience of opening a webpage and being immediately yelled at by four dialog boxes in a row.</p>
+
+<hr>
+
+<table border="2" cellpadding="10" bgcolor="#c0c0c0"><tr><td>
+
+<font color="#000000">
+<table width="400" bgcolor="#000080" cellpadding="4"><tr>
+<td><font color="#ffffff"><b>⚠ System Error</b></font></td>
+<td align="right"><font color="#ffffff"><b>&nbsp;_&nbsp;&nbsp;&nbsp;□&nbsp;&nbsp;&nbsp;X&nbsp;</b></font></td>
+</tr></table>
+<table width="400" bgcolor="#c0c0c0" cellpadding="12"><tr><td>
+<font color="#000000">
+<b>{{TARGET}}.EXE has stopped responding.</b><br><br>
+Windows will now close the program. if you were in the middle of something, the information you were working on might be lost.<br><br>
+<center>
+<input type="button" value="   Close   " disabled>
+<input type="button" value="   Debug   " disabled>
+<input type="button" value="   Weep    " disabled>
+</center>
+</font>
+</td></tr></table>
+</font>
+
+</td></tr></table>
+
+<br>
+
+<table border="2" cellpadding="10" bgcolor="#c0c0c0"><tr><td>
+<font color="#000000">
+<table width="400" bgcolor="#808080" cellpadding="4"><tr>
+<td><font color="#ffffff"><b>⚠ Critical Error</b></font></td>
+</tr></table>
+<table width="400" bgcolor="#c0c0c0" cellpadding="12"><tr><td>
+<font color="#000000">
+<b>The operation was not completed.</b><br><br>
+reason: {{TARGET}}<br>
+code: 0x00000420<br>
+severity: high<br><br>
+please restart your sense of peace.
+</font>
+</td></tr></table>
+</font>
+</td></tr></table>
+
+<hr>
+
+<p><a href="index.html"><font color="#ffffff">&lt;&lt; return to safety</font></a></p>
+
+</body>
+</html>
