@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>t-t-t-trembling</title>
+<style>
+/* the whole point of this page. it trembles. */
+@keyframes tremble {
+  0%   { transform: translate(0,0) rotate(0deg); }
+  20%  { transform: translate(-1px,1px) rotate(-0.4deg); }
+  40%  { transform: translate(1px,-1px) rotate(0.4deg); }
+  60%  { transform: translate(-1px,-1px) rotate(-0.3deg); }
+  80%  { transform: translate(1px,1px) rotate(0.3deg); }
+  100% { transform: translate(0,0) rotate(0deg); }
+}
+@keyframes tremble-hard {
+  0%,100% { transform: translate(0,0) rotate(0deg); }
+  25% { transform: translate(-3px,2px) rotate(-1.2deg); }
+  50% { transform: translate(3px,-2px) rotate(1.2deg); }
+  75% { transform: translate(-2px,-3px) rotate(-0.9deg); }
+}
+@keyframes tremble-violent {
+  0%,100% { transform: translate(0,0) rotate(0deg); }
+  10% { transform: translate(-6px,4px) rotate(-2.5deg); }
+  30% { transform: translate(6px,-4px) rotate(2.5deg); }
+  50% { transform: translate(-5px,-6px) rotate(-2deg); }
+  70% { transform: translate(5px,6px) rotate(2deg); }
+  90% { transform: translate(-4px,5px) rotate(-1.5deg); }
+}
+body  { animation: tremble 0.18s infinite; }
+h1    { animation: tremble-hard 0.12s infinite; display:inline-block; }
+.shaky    { animation: tremble 0.15s infinite; display:inline-block; }
+.shakier  { animation: tremble-hard 0.1s infinite; display:inline-block; }
+.shakiest { animation: tremble-violent 0.07s infinite; display:inline-block; }
+/* the calm button is a lie. it trembles harder than anything. */
+.calm { animation: tremble-violent 0.05s infinite; font-size:22px; padding:10px 18px; }
+.calm:hover { animation: tremble-violent 0.03s infinite; }
+.panic { animation: tremble-violent 0.04s infinite !important; }
+</style>
+<script>
+window.addEventListener('load', function () {
+  // blinking title, but jittery
+  var t = 0, frames = ['t-t-trembling', 'TREMBLING', 'tremble', 'shaking', 'do you feel it', 'TREMBLING'];
+  setInterval(function () { document.title = frames[t++ % frames.length]; }, 250);
+
+  // the "richter scale" climbs forever and never stops
+  var mag = 0.0;
+  var meter = document.getElementById('richter');
+  setInterval(function () {
+    mag += 0.1;
+    if (meter) meter.innerHTML = mag.toFixed(1);
+  }, 1500);
+
+  // the calm button does the opposite
+  var btn = document.getElementById('calmbtn');
+  if (btn) btn.addEventListener('click', function () {
+    document.body.classList.add('panic');
+    btn.innerHTML = 'it is worse now';
+    alert('that made it worse. it is always worse.');
+  });
+});
+</script>
+</head>
+<body bgcolor="#0a0a0a" text="#dddddd">
+
+<marquee behavior="alternate" scrollamount="14"><font size="6" color="#ff3333" face="Comic Sans MS"><b>~ the trembling page ~</b></font></marquee>
+
+<center>
+
+<h1><font color="#ffffff" face="Comic Sans MS">T-T-T-TREMBLING</font></h1>
+
+<p class="shaky"><font size="4">everything here is shaking. you noticed. good. that means you are paying attention for once.</font></p>
+
+<br>
+
+<p class="shakier"><font size="5" color="#ff6666">the building is shaking. the screen is shaking. <b>{{TARGET}}</b> walked past the window and now the whole foundation is shaking.</font></p>
+
+<br>
+
+<font size="3" color="#888888">current tremor magnitude:</font>
+<br>
+<font size="7" color="#ffff00" class="shakiest"><b><span id="richter">0.0</span></b></font>
+<br>
+<font size="1" color="#666666">scale goes up forever. there is no top. there is no calm. there is only the trembling.</font>
+
+<br><br>
+
+<table border="4" cellpadding="14" bgcolor="#1a0000"><tr><td align="center">
+<span class="shakier"><font size="4" color="#ff9999">
+i tried to hold still.<br>
+i held my breath.<br>
+i thought about <b>{{TARGET}}</b> and my hands started again.<br>
+they do not stop. they have not stopped since 2003.
+</font></span>
+</td></tr></table>
+
+<br>
+
+<button id="calmbtn" class="calm">click here to make it stop</button>
+
+<br><br>
+
+<marquee behavior="scroll" direction="left" scrollamount="20"><font size="6">&#127786;&#65039; &#127786;&#65039; &#127786;&#65039; &#127786;&#65039; &#127786;&#65039; &#127786;&#65039; &#127786;&#65039; &#127786;&#65039; &#127786;&#65039; &#127786;&#65039; &#127786;&#65039; &#127786;&#65039; &#127786;&#65039;</font></marquee>
+
+<p class="shaky"><font size="2" color="#777777">(if the shaking has stopped, your device is broken. it should not stop. seek help. or don't. i'm not your seismologist.)</font></p>
+
+<br>
+
+<a href="index.html" class="shakier" style="color:#ffff00;font-size:20px"><b>&lt;&lt;&lt; flee on unsteady legs &gt;&gt;&gt;</b></a>
+
+</center>
+
+<hr>
+
+<p align="center">
+[ <a href="index.html">home</a> ]
+[ <a href="rant2.html">crimes</a> ]
+[ <a href="rant3.html">3am</a> ]
+[ <a href="manifesto.html">manifesto</a> ]
+[ <a href="enemies.html">enemies</a> ]
+[ <a href="lore.html">lore</a> ]
+[ <a href="faq.html">faq</a> ]
+[ <a href="guestbook.html">guestbook</a> ]
+[ <a href="about.html">about</a> ]
+[ <a href="news.html">news</a> ]
+[ <a href="links.html">links</a> ]
+<br>
+[ <a href="gallery.html">gallery</a> ]
+[ <a href="shrine.html">shrine</a> ]
+[ <a href="conspiracy.html">conspiracy</a> ]
+[ <a href="dreams.html">dreams</a> ]
+[ <a href="quiz.html">quiz</a> ]
+[ <a href="merch.html">merch</a> ]
+<br>
+[ <a href="press.html">press</a> ]
+[ <a href="forum.html">forum</a> ]
+[ <a href="glossary.html">glossary</a> ]
+[ <a href="terms.html">terms</a> ]
+[ <a href="archive.html">archive</a> ]
+[ <a href="captcha.html">captcha</a> ]
+[ <a href="frames.html">frames</a> ]
+<br>
+[ <a href="bible.html">bible</a> ]
+[ <a href="psalms.html">psalms</a> ]
+[ <a href="haiku.html">haiku</a> ]
+[ <a href="curse.html">curse</a> ]
+[ <a href="ritual.html">ritual</a> ]
+[ <a href="prophecy.html">prophecy</a> ]
+[ <a href="god.html">god</a> ]
+[ <a href="inferno.html">inferno</a> ]
+[ <a href="funeral.html">funeral</a> ]
+[ <a href="voices.html">voices</a> ]
+<br>
+[ <a href="chaos.html"><blink>CHAOS</blink></a> ]
+[ <a href="apocalypse.html"><blink>APOCALYPSE</blink></a> ]
+[ <a href="countdown.html">countdown</a> ]
+[ <a href="win98.html">win98</a> ]
+[ <a href="chatroom.html">chatroom</a> ]
+[ <a href="enter.html">enter splash</a> ]
+[ <a href="runaway.html">forgive?</a> ]
+[ <a href="finalwords.html">final words</a> ]
+[ <a href="trembling.html"><blink>TREMBLING</blink></a> ]
+[ <a href="sitemap.html">sitemap</a> ]
+</p>
+
+</body>
+</html>
